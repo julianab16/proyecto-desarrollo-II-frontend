@@ -67,7 +67,7 @@ export const Home = () => {
       {/* FOOTER - se mantiene igual */}
       <footer className="site-footer">
         <div className="container footer-inner">
-          <div className="logo-small">L'ATELIER</div>
+          <div className="logo-small"></div>
           <div className="copyright">© 2025 L'ATELIER. Todos los derechos reservados.</div>
         </div>
       </footer>
