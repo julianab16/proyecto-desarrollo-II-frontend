@@ -9,22 +9,15 @@ export const Config = () => {
         <div className="container header-inner">
           <div className="logo">L'ATELIER</div>
           <nav className="main-nav">
-            <Link to="/">Inicio</Link>
-            <Link to="#">Sobre Nosotros</Link>
-            <Link to="#">Pinturas</Link>
+            
           </nav>
           <div className="auth">
-            <button
-              className="btn btn-outline"
-              onClick={() => navigate("/login")}
-            >
-              Inicia Sesión
-            </button>
+            
             <button
               className="btn btn-primary"
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/#")}
             >
-              Registrate
+              Regresar
             </button>
           </div>
         </div>
