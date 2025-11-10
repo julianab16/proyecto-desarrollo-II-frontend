@@ -22,7 +22,7 @@ body {
 body {
   font-family: Inter, system-ui, Arial, sans-serif;
   color: #222;
-  background: #f7f7f7
+  background: #ffffff
 }
 
 #root {
@@ -67,6 +67,11 @@ body {
   text-decoration: none
 }
 
+.main-nav a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
 .auth .btn {
   margin-left: 8px
 }
@@ -79,7 +84,8 @@ body {
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
-  border: none
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .btn-outline {
@@ -88,9 +94,26 @@ body {
   color: var(--accent-dark)
 }
 
+.btn-outline:hover {
+  background: var(--accent-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.2);
+}
+
 .btn-primary {
   background: var(--accent-dark);
-  color: var(--white)
+  border: 2px solid var(--accent-dark) !important;
+  color: var(--white);
+
+}
+
+.btn-primary:hover {
+  background: transparent;
+  border: 2px solid var(--accent-dark) !important;
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.2);
 }
 
 .btn-ghost {
@@ -99,6 +122,12 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.7) !important;
   padding: 10px 22px;
   border-radius: 8px
+}
+
+.btn-ghost:hover {
+  background: var(--white);
+  color: var(--accent-dark);
+  transform: translateY(-2px);
 }
 
 .btn.large {
@@ -246,7 +275,7 @@ body {
 }
 
 .copyright {
-  font-size: 14px
+  font-size: 14px;
 }
 
 @media (max-width:800px) {

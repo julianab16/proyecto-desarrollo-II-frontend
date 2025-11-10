@@ -1,20 +1,22 @@
 import React from 'react';
 import '../styles/home.css';
+import { Link, useNavigate} from 'react-router-dom';
 
-export const Home = () => {
+const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <header className="site-header">
         <div className="container header-inner">
           <div className="logo">L'ATELIER</div>
           <nav className="main-nav">
-            <a href="#">Inicio</a>
-            <a href="#">Sobre Nosotros</a>
-            <a href="#">Pinturas</a>
+            <Link to="/">Inicio</Link>
+            <Link to="#">Sobre Nosotros</Link>
+            <Link to="#">Pinturas</Link>
           </nav>
           <div className="auth">
-            <button className="btn btn-outline">Inicia Sesión</button>
-            <button className="btn btn-primary">Registrate</button>
+            <button className="btn btn-outline" onClick={() => navigate('/login')}>Inicia Sesión</button>
+            <button className="btn btn-primary" onClick={() => navigate('/register')}>Registrate</button>
           </div>
         </div>
       </header>
