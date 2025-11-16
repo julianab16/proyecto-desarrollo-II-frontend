@@ -3,6 +3,8 @@ import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
 import Config from './pages/config'
+import HomeUser from './pages/homeuser'
+import Shop from './pages/shop'
 // import Dashboard from './pages/dashboard'
 
 const App = () => {
@@ -13,6 +15,8 @@ const App = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/configuration" element={<Config />} />
+      <Route path="/homeuser" element={<HomeUser/>} />
+      <Route path="/shop" element={<Shop/>} />  
       {/* <Route path="/dashboard" element={<Dashboard />} />  */}
       
     </Routes>
