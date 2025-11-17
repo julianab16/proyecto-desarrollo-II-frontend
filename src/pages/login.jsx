@@ -1,9 +1,13 @@
 import "../styles/login.css";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 export const Login = () => {
   const navigate = useNavigate();
+  const [_forgotOpen, setForgotOpen] = useState(false);
+  const [_forgotMessage, setForgotMessage] = useState(null);
+  const [_forgotEmail, setForgotEmail] = useState('');
   return (
+ 
     <>
       <header className="site-header">
         <div className="container header-inner">
