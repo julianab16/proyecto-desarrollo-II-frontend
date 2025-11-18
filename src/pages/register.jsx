@@ -70,6 +70,12 @@ export const Register = () => {
 
             <div className="register-form">
 
+              <input
+                type="text"
+                placeholder="Usuario"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
 
               <input
                 type="text"
