@@ -28,6 +28,15 @@
   text-decoration: none;
 }
 
+.img-logo{
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.3s ease;
+
+}
+
 /* NAVIGATION */
 .main-nav {
   display: flex;
