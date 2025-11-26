@@ -22,7 +22,7 @@ export default function Header() {
         <nav className="main-nav">
           <Link to="/">Inicio</Link>
           <Link to="/servicios">Servicios</Link>
-          <Link to="/">Pintutas</Link>
+          <Link to="/">Pinturas</Link>
           
         </nav>
 
