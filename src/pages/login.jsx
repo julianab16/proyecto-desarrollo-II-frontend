@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { login } = useAuth(); // <-- IMPORTANTE
+  //const { login } = useAuth(); // <-- IMPORTANTE
   const { setIsAuthenticated, setUser } = useAuth();
  
   const [username, setUsername] = useState("");
