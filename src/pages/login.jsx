@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { login } = useAuth(); // <-- IMPORTANTE
+  //const { login } = useAuth(); // <-- IMPORTANTE
   const { setIsAuthenticated, setUser } = useAuth();
  
   const [username, setUsername] = useState("");
@@ -33,14 +33,16 @@ export const Login = () => {
       //  Guardar usuario en contexto
       setIsAuthenticated(true);
       setUser(res.data.user);
-      login(res.data.user); //  actualiza Header
+      //login(res.data.user);  //  actualiza Header
 
       //  Navegación después del login
       navigate("/homeuser");
 
     } catch (err) {
-      setErrorMessage(err.response?.data?.detail || "Error al iniciar sesión.");
-    }
+  console.error("ERROR LOGIN:", err);
+  setErrorMessage(err.response?.data?.detail || err.message || "Error al iniciar sesión.");
+}
+
   };
 
   return (

@@ -11,11 +11,19 @@ export default function Header() {
     <header className="site-header">
       <div className="header-inner">
 
-        <Link to="/" className="header-logo">MiApp</Link>
+        <Link to="/">
+          <img
+            src="/logo-l'atelier.png"
+            alt="L'Atelier Logo"
+            className="img-logo"
+          />      
+        </Link>
 
         <nav className="main-nav">
           <Link to="/">Inicio</Link>
           <Link to="/servicios">Servicios</Link>
+          <Link to="/">Pinturas</Link>
+          
         </nav>
 
         <div className="header-auth">
