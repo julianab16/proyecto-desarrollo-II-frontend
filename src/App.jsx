@@ -7,7 +7,7 @@ import Config from "./pages/config";
 import HomeUser from "./pages/homeuser";
 import Shop from "./pages/shop";
 import RecoverPassword from "./pages/recoverpassword";
-import ChangePassword from "./pages/changePassword";
+import ChangePassword from "./pages/ChangePassword";
 
 import Header from "./components/Header";
 
