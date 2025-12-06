@@ -1,0 +1,88 @@
+/* src/styles/useradmin.css */
+.useradmin-page {
+  padding: 20px 0;
+  min-height: 60vh;
+}
+
+.useradmin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.useradmin-header h1 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 1.25rem;
+}
+
+.useradmin-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Tabla */
+.users-table-wrap {
+  background: #fff;
+  border: 1px solid #e6eef2;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table thead th {
+  text-align: left;
+  padding: 12px 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f4f6;
+}
+
+.users-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f7f9fb;
+  vertical-align: middle;
+}
+
+.user-name {
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.user-email {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.user-role select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d7e0e6;
+  background: var(--input-background);
+  color: var(--accent-dark);
+  min-width: 140px;
+}
+
+.user-actions .btn {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsividad */
+@media (max-width: 720px) {
+  .useradmin-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .user-role select {
+    min-width: 120px;
+  }
+}

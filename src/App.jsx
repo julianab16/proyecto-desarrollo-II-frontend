@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/login";
@@ -8,13 +8,23 @@ import HomeUser from "./pages/homeuser";
 import Shop from "./pages/shop";
 import RecoverPassword from "./pages/recoverpassword";
 import ChangePassword from "./pages/ChangePassword";
+import AdminDashboard from "./pages/admindashboard";
+import UserAdmin from "./pages/useradmin";
 
 import Header from "./components/Header";
 
 const App = () => {
+  const location = useLocation();
+
+  // Rutas donde NO queremos mostrar el header
+  const noHeaderPaths = ["/admin-dashboard", "/user-admin"];
+  const hideHeader = noHeaderPaths.some(
+    (p) => location.pathname === p || location.pathname.startsWith(p + "/")
+  );
+
   return (
     <>
-      <Header />
+      {!hideHeader && <Header />}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,8 +35,10 @@ const App = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/recover-password" element={<RecoverPassword />} />
         <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/user-admin" element={<UserAdmin />} />
       </Routes>
-   </>
+    </>
   );
 };
 
