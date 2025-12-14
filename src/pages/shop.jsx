@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/shop.css';
 import { useNavigate } from 'react-router-dom';
 
 const shop = () => {
   const navigate = useNavigate();
+
+  // ===== ADICIÓN HU10 =====
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [comment, setComment] = useState('');
+  const [rating, setRating] = useState('');
+  // =======================
 
   const items = [
     { id: 1, name: "Nombre de Pintura 1", desc: "Descripción a detalle de las características de la pintura 1", tag: "Más vendidos", price: 30000 },
@@ -12,6 +18,24 @@ const shop = () => {
   ];
 
   const total = items.reduce((acc, item) => acc + item.price, 0);
+
+  // ===== ADICIÓN HU10 =====
+  const handleSubmitReview = (e) => {
+    e.preventDefault();
+
+    // Aquí iría el POST al backend
+    console.log({
+      product: selectedItem,
+      comment,
+      rating
+    });
+
+    alert('Comentario enviado');
+    setSelectedItem(null);
+    setComment('');
+    setRating('');
+  };
+  // =======================
 
   return (
     <>
@@ -56,12 +80,52 @@ const shop = () => {
                   <p>{item.desc}</p>
                   {item.tag && <span className="tag">{item.tag}</span>}
                   <p className="price">${item.price.toLocaleString('es-CO')}</p>
+
+                  {/* ===== BOTÓN HU10 ===== */}
+                  <button
+                    className="review-btn"
+                    onClick={() => setSelectedItem(item)}
+                  >
+                    Comentar
+                  </button>
+                  {/* ===================== */}
                 </div>
 
                 <i className="fas fa-trash delete-icon"></i>
               </div>
             ))}
           </div>
+
+          {/* ===== FORMULARIO HU10 ===== */}
+          {selectedItem && (
+            <form className="review-form" onSubmit={handleSubmitReview}>
+              <h4>Comentar {selectedItem.name}</h4>
+
+              <textarea
+                placeholder="Escribe tu opinión"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                required
+              />
+
+              <select
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+                required
+              >
+                <option value="">Calificación</option>
+                {[1, 2, 3, 4, 5].map(n => (
+                  <option key={n} value={n}>{n} ⭐</option>
+                ))}
+              </select>
+
+              <button type="submit" className="choose-btn">
+                Enviar comentario
+              </button>
+            </form>
+          )}
+          {/* ========================== */}
+
         </div>
 
         {/* Área derecha (Resumen) */}
